@@ -1,0 +1,14 @@
+{
+  "name": "imageradioselect",
+  "version": "0.1.0",
+  "description": "Enable selection of hidden radio buttons through images",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frode Danielsen <frode@e5r.no>",
+  "license": "MIT",
+  "dependencies": {
+    "bane": "^1.1.0"
+  }
+}
