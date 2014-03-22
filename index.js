@@ -29,12 +29,26 @@ var ImageRadioSelect = createEventEmitter({
 		wrapper.addEventListener('dblclick', this.handleDoubleClick.bind(this));
 	},
 
+	/**
+	 * Handles clicks on the container element for radio buttons.
+	 *
+	 * Selects the radio button inside, and emits and event informing of the change.
+	 */
 	handleClick: function (e) {
-		e.target.querySelector('input[type="radio"]').checked = true;
+		var radio = e.currentTarget.querySelector('input[type="radio"]');
+		radio.checked = true;
+		this.emit('select', radio);
 	},
 
+	/**
+	 * Handles double click on container element for radio buttons.
+	 *
+	 * XXX: Should possibly not be here as it's a magic feature of this module.
+	 */
 	handleDoubleClick: function (e) {
-		e.target.querySelector('input[type="radio"]').form.submit();
+		var radio = e.currentTarget.querySelector('input[type="radio"]');
+		this.emit('save', radio);
+		radio.form.submit();
 	}
 });
 
